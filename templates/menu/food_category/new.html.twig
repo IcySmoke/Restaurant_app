@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FoodCategory{% endblock %}
+
+{% block body %}
+    <h1>Create new FoodCategory</h1>
+
+    {{ include('menu/food_category/_form.html.twig') }}
+
+    <a href="{{ path('app_menu_food_category_index') }}">back to list</a>
+{% endblock %}
