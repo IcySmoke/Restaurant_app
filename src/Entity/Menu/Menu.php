@@ -30,7 +30,7 @@ class Menu
     #[ORM\ManyToMany(targetEntity: FoodCategory::class, inversedBy: 'foods')]
     private $category;
 
-    #[ORM\ManyToMany(targetEntity: Allergens::class, inversedBy: 'menus')]
+    #[ORM\ManyToMany(targetEntity: Allergen::class, inversedBy: 'menus')]
     private $allergens;
 
     #[ORM\Column(type: 'object', nullable: true)]
@@ -120,14 +120,14 @@ class Menu
     }
 
     /**
-     * @return Collection<int, Allergens>
+     * @return Collection<int, Allergen>
      */
     public function getAllergens(): Collection
     {
         return $this->allergens;
     }
 
-    public function addAllergen(Allergens $allergen): self
+    public function addAllergen(Allergen $allergen): self
     {
         if (!$this->allergens->contains($allergen)) {
             $this->allergens[] = $allergen;
@@ -136,7 +136,7 @@ class Menu
         return $this;
     }
 
-    public function removeAllergen(Allergens $allergen): self
+    public function removeAllergen(Allergen $allergen): self
     {
         $this->allergens->removeElement($allergen);
 

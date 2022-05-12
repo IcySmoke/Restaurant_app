@@ -2,13 +2,13 @@
 
 namespace App\Entity\Menu;
 
-use App\Repository\Menu\AllergensRepository;
+use App\Repository\Menu\AllergenRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AllergensRepository::class)]
-class Allergens
+#[ORM\Entity(repositoryClass: AllergenRepository::class)]
+class Allergen
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,7 +18,7 @@ class Allergens
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'allergens')]
+    #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'allergen')]
     private $menus;
 
     public function __construct()

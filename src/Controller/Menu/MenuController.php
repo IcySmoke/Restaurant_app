@@ -39,13 +39,13 @@ class MenuController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_menu_menu_show', methods: ['GET'])]
-    public function show(Menu $menu): Response
-    {
-        return $this->render('menu/menu/show.html.twig', [
-            'menu' => $menu,
-        ]);
-    }
+//    #[Route('/{id}', name: 'app_menu_menu_show', methods: ['GET'])]
+//    public function show(Menu $menu): Response
+//    {
+//        return $this->render('menu/menu/show.html.twig', [
+//            'menu' => $menu,
+//        ]);
+//    }
 
     #[Route('/admin/food/edit/{id}', name: 'app_menu_menu_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Menu $menu, MenuRepository $menuRepository): Response

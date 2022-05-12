@@ -18,7 +18,7 @@ class MenuType extends AbstractType
             ->add('description')
 //            ->add('options')
 //            ->add('category')
-//            ->add('allergens')
+//            ->add('allergen')
         ;
     }
 

@@ -2,26 +2,26 @@
 
 namespace App\Repository\Menu;
 
-use App\Entity\Menu\Allergens;
+use App\Entity\Menu\Allergen;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Allergens>
+ * @extends ServiceEntityRepository<Allergen>
  *
- * @method Allergens|null find($id, $lockMode = null, $lockVersion = null)
- * @method Allergens|null findOneBy(array $criteria, array $orderBy = null)
- * @method Allergens[]    findAll()
- * @method Allergens[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Allergen|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Allergen|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Allergen[]    findAll()
+ * @method Allergen[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AllergensRepository extends ServiceEntityRepository
+class AllergenRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Allergens::class);
+        parent::__construct($registry, Allergen::class);
     }
 
-    public function add(Allergens $entity, bool $flush = false): void
+    public function add(Allergen $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class AllergensRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Allergens $entity, bool $flush = false): void
+    public function remove(Allergen $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class AllergensRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Allergens[] Returns an array of Allergens objects
+//     * @return Allergen[] Returns an array of Allergen objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class AllergensRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Allergens
+//    public function findOneBySomeField($value): ?Allergen
 //    {
 //        return $this->createQueryBuilder('a')
 //            ->andWhere('a.exampleField = :val')

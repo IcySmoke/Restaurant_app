@@ -39,13 +39,13 @@ class FoodCategoryController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_menu_food_category_show', methods: ['GET'])]
-    public function show(FoodCategory $foodCategory): Response
-    {
-        return $this->render('menu/food_category/show.html.twig', [
-            'food_category' => $foodCategory,
-        ]);
-    }
+//    #[Route('/{id}', name: 'app_menu_food_category_show', methods: ['GET'])]
+//    public function show(FoodCategory $foodCategory): Response
+//    {
+//        return $this->render('menu/food_category/show.html.twig', [
+//            'food_category' => $foodCategory,
+//        ]);
+//    }
 
     #[Route('/admin/menu/food/category/edit/{id}', name: 'app_menu_food_category_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, FoodCategory $foodCategory, FoodCategoryRepository $foodCategoryRepository): Response
